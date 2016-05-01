@@ -25,6 +25,3 @@ Devices used to test:
 * Cree Connected
 * Philips Hue wireless bulbs
 
-
-
-<a href="http://www.kapparock.com">![logo](https://github.com/kapparock/hello-world-restful/raw/master/img/logo-name200x32.png)</a>
