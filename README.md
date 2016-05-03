@@ -25,3 +25,37 @@ Devices used to test:
 * Cree Connected
 * Philips Hue wireless bulbs
 
+##Compile & Install:
+Currently kappaIO only supports cross-compilation - compilation is done by PC, and the resulting .deb package is installed to Raspberry Pi. Native compilation in PC ( yes, you run the gateway using desktop) or Raspberry Pi enviroment are in progress.
+
+###Things you need to do in PC
+
+To compile this package, download the ARMv7 cross-compile SDK to  :
+
+```
+git clone https://github.com/kappaIO-Dev/kappaIO-toolchain-crosscompile-armhf.git
+```
+Download rsserial to `package/` folder of the SDK:
+
+```
+cd kappaIO-toolchain-crosscompile-armhf/package
+git clone https://github.com/kappaIO-Dev/rsserial.git
+git clone https://github.com/kappaIO-Dev/kappaio-lighting-widget.git
+```
+
+Build & install:
+
+You have to have RSSERIAL installed, if you haven't
+```
+cd kappaIO-toolchain-crosscompile-armhf/package/rsserial/build
+./build root@192.168.1.15 
+```
+
+Having installed RSSERIAL:
+```
+cd kappaIO-toolchain-crosscompile-armhf/package/kappaio-lighting-widget/build
+./build root@192.168.1.15 
+```
+Substitute the IP address with LAN IP of your Raspberry Pi.
+
+For questions : dev@kapparock.com
