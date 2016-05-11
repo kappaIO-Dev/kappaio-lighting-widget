@@ -1,0 +1,11 @@
+#!/bin/sh
+WIDGET_NAME="kappaio-lighting-widget"
+WIDGET_ROOT="/usr/lib/kappaio/app/kappaio-lighting-widget"
+WIDGET_INDEX="hue_widget.html"
+echo "Registering new webapp:" 
+echo "Name : ${WIDGET_NAME}"
+echo "Root : ${WIDGET_ROOT}"
+echo "Index: ${WIDGET_INDEX}"
+/usr/lib/rsserial/widget_registry_mgr "${WIDGET_NAME}" "${WIDGET_ROOT}" "${WIDGET_INDEX}" "POST"
+echo "Restarting kappaio"
+/etc/init.d/kappaio-watch restart
